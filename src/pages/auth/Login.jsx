@@ -95,23 +95,23 @@ const Login = () => {
               onClick={() => fillDemoCredentials('patient')}
               className="flex items-center gap-2 hover:text-emerald-900 transition-colors"
             >
-              <span role="img" aria-label="patient">👤</span> Patient: {patients[0].email}
+              <span role="img" aria-label="patient">👤</span> Patient : {patients[0].email}
             </button>
             <button 
               type="button"
               onClick={() => fillDemoCredentials('doctor')}
               className="flex items-center gap-2 hover:text-emerald-900 transition-colors"
             >
-              <span role="img" aria-label="doctor">👩‍⚕️</span> Doctor: {doctors[0].email}
+              <span role="img" aria-label="doctor">👩‍⚕️</span> Doctor : {doctors[0].email}
             </button>
             <button 
               type="button"
               onClick={() => fillDemoCredentials('pharmacist')}
               className="flex items-center gap-2 hover:text-emerald-900 transition-colors"
             >
-              <span role="img" aria-label="pharmacist">💊</span> Pharmacist: {pharmacists[0].email}
+              <span role="img" aria-label="pharmacist">💊</span> Pharmacist : {pharmacists[0].email}
             </button>
-            <p className="text-emerald-600 pt-2">Password: <strong>password123</strong></p>
+            <p className="text-emerald-600 pt-2">Password : <strong>password123</strong></p>
           </div>
         </div>
         

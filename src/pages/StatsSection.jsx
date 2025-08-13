@@ -1,6 +1,5 @@
 import { UsersIcon, HeartIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 import CountUp from 'react-countup';
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export default function StatsSection() {

@@ -13,16 +13,32 @@ import { useAuth } from "../../contexts/AuthContext";
 
 const patientMenuItems = [
   { name: "Dashboard", href: "/patient", icon: HomeIcon },
-  { name: "Appointments", href: "/patient/appointments", icon: ClipboardDocumentListIcon },
-  { name: "Prescriptions", href: "/patient/prescriptions", icon: ClipboardDocumentListIcon },
+  {
+    name: "Appointments",
+    href: "/patient/appointments",
+    icon: ClipboardDocumentListIcon,
+  },
+  {
+    name: "Prescriptions",
+    href: "/patient/prescriptions",
+    icon: ClipboardDocumentListIcon,
+  },
   { name: "Health Logs", href: "/patient/health-logs", icon: UserGroupIcon },
-  { name: "Messages", href: "/patient/messages", icon: ChatBubbleLeftRightIcon },
+  {
+    name: "Messages",
+    href: "/patient/messages",
+    icon: ChatBubbleLeftRightIcon,
+  },
   { name: "Settings", href: "/patient/settings", icon: CogIcon },
 ];
 
 const doctorMenuItems = [
   { name: "Dashboard", href: "/doctor", icon: HomeIcon },
-  { name: "Schedule", href: "/doctor/schedule", icon: ClipboardDocumentListIcon },
+  {
+    name: "Schedule",
+    href: "/doctor/schedule",
+    icon: ClipboardDocumentListIcon,
+  },
   { name: "Patients", href: "/doctor/patients", icon: UserGroupIcon },
   { name: "Messages", href: "/doctor/messages", icon: ChatBubbleLeftRightIcon },
   { name: "Settings", href: "/doctor/settings", icon: CogIcon },
@@ -30,9 +46,17 @@ const doctorMenuItems = [
 
 const pharmacistMenuItems = [
   { name: "Dashboard", href: "/pharmacist", icon: HomeIcon },
-  { name: "Prescriptions", href: "/pharmacist/prescriptions", icon: ClipboardDocumentListIcon },
+  {
+    name: "Prescriptions",
+    href: "/pharmacist/prescriptions",
+    icon: ClipboardDocumentListIcon,
+  },
   { name: "Inventory", href: "/pharmacist/inventory", icon: UserGroupIcon },
-  { name: "Messages", href: "/pharmacist/messages", icon: ChatBubbleLeftRightIcon },
+  {
+    name: "Messages",
+    href: "/pharmacist/messages",
+    icon: ChatBubbleLeftRightIcon,
+  },
   { name: "Settings", href: "/pharmacist/settings", icon: CogIcon },
 ];
 
@@ -94,18 +118,22 @@ export default function Sidebar() {
       <aside
         className={`fixed top-0 left-0 min-h-screen ${sidebarWidth} bg-gradient-to-b from-primary-50 via-white to-medical-50 shadow-xl border-r border-gray-200 flex flex-col z-50 transition-transform duration-200 ${
           open ? "translate-x-0" : "-translate-x-full"
-        } lg:translate-x-0 lg:static lg:h-auto`}
+        } lg:translate-x-0 lg:static lg:h-auto dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 dark:border-gray-800`}
       >
         {/* Header */}
-        <div className="flex items-center gap-3 px-6 h-20 border-b border-gray-100 bg-white/80 backdrop-blur">
-          <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary-100 shadow-inner">
-            <span className="text-primary-600 text-2xl font-bold">🩺</span>
+        <div className="flex items-center gap-3 px-6 h-20 border-b border-gray-100 bg-white/80 backdrop-blur dark:bg-gray-900/80 dark:border-gray-800">
+          <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary-100 shadow-inner dark:bg-primary-900/30">
+            <span className="text-primary-600 text-2xl font-bold dark:text-primary-300">
+              🩺
+            </span>
           </div>
           <div>
-            <span className="block text-lg font-bold text-primary-700 tracking-wide">
+            <span className="block text-lg font-bold text-primary-700 tracking-wide dark:text-primary-300">
               {panelInfo.title}
             </span>
-            <span className="block text-xs text-gray-400">{panelInfo.subtitle}</span>
+            <span className="block text-xs text-gray-400 dark:text-gray-500">
+              {panelInfo.subtitle}
+            </span>
           </div>
           <div className="ml-auto lg:hidden">
             <button
@@ -113,7 +141,7 @@ export default function Sidebar() {
               className="p-1"
               onClick={() => setOpen(false)}
             >
-              <XMarkIcon className="h-7 w-7 text-gray-500" />
+              <XMarkIcon className="h-7 w-7 text-gray-500 dark:text-gray-300" />
             </button>
           </div>
         </div>
@@ -129,15 +157,15 @@ export default function Sidebar() {
                     to={item.href}
                     className={`flex items-center px-4 py-2 text-base rounded-lg transition-colors group ${
                       isActive
-                        ? "bg-primary-100 text-primary-700 font-semibold shadow-inner"
-                        : "text-gray-700 hover:bg-primary-50 hover:text-primary-700"
+                        ? "bg-primary-100 text-primary-700 font-semibold shadow-inner dark:bg-primary-900/20 dark:text-primary-200"
+                        : "text-gray-700 hover:bg-primary-50 hover:text-primary-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-primary-200"
                     }`}
                   >
                     <item.icon
                       className={`mr-3 h-6 w-6 ${
                         isActive
-                          ? "text-primary-500"
-                          : "text-gray-400 group-hover:text-primary-400"
+                          ? "text-primary-500 dark:text-primary-300"
+                          : "text-gray-400 group-hover:text-primary-400 dark:text-gray-500 dark:group-hover:text-primary-300"
                       }`}
                     />
                     <span className="truncate">{item.name}</span>
@@ -149,11 +177,11 @@ export default function Sidebar() {
         </nav>
 
         {/* Quick Stats */}
-        <div className="mt-auto mb-6 mx-4 p-4 bg-medical-50 rounded-xl shadow-sm hidden md:block">
-          <h3 className="text-sm font-medium text-primary-700 mb-2 tracking-wide">
+        <div className="mt-auto mb-6 mx-4 p-4 bg-medical-50 rounded-xl shadow-sm hidden md:block dark:bg-gray-900 dark:border dark:border-gray-800">
+          <h3 className="text-sm font-medium text-primary-700 mb-2 tracking-wide dark:text-primary-300">
             Quick Stats
           </h3>
-          <div className="text-xs text-gray-600 space-y-1 font-mono">
+          <div className="text-xs text-gray-600 space-y-1 font-mono dark:text-gray-400">
             <p>• 3 pending reminders</p>
             <p>• 1 new prescription</p>
             <p>• Next appointment: Tomorrow</p>
@@ -162,7 +190,7 @@ export default function Sidebar() {
 
         {/* Bottom Decoration */}
         <div className="hidden lg:block mt-auto px-6 pb-6">
-          <div className="h-2 w-full rounded-xl bg-gradient-to-r from-primary-200 via-medical-200 to-primary-100 opacity-70" />
+          <div className="h-2 w-full rounded-xl bg-gradient-to-r from-primary-200 via-medical-200 to-primary-100 opacity-70 dark:from-primary-900 dark:via-medical-900 dark:to-primary-900" />
         </div>
       </aside>
     </>
